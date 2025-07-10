@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://10.100.102.15:3001/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://mami-back.onrender.com/api';
 
 export interface GalleryImage {
   filename: string;
