@@ -3,6 +3,7 @@ import { Box, Container, Typography, IconButton, Paper, Slider } from '@mui/mate
 import { PlayArrow, Pause, SkipNext, MusicNote } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { useAudio } from '../context/AudioContext';
+import Beams from '../components/Beams';
 
 const formatTime = (time: number): string => {
   const minutes = Math.floor(time / 60);
@@ -18,19 +19,64 @@ const Music: React.FC = () => {
   };
 
   return (
-    <Container maxWidth="sm">
+    <Box sx={{ position: 'relative', minHeight: '100vh' }}>
+      {/* Beams Background */}
       <Box sx={{ 
-        textAlign: 'center', 
-        my: 4,
-        minHeight: 'calc(100vh - 200px)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center'
+        position: 'absolute', 
+        top: 0, 
+        left: 0, 
+        width: '100%', 
+        height: '100%', 
+        zIndex: 0 
       }}>
-        <Typography variant="h4" color="primary" gutterBottom>
-          Now Playing
-        </Typography>
+        <Beams
+          beamWidth={2}
+          beamHeight={28}
+          beamNumber={12}
+          lightColor="#FF69B4"
+          speed={0.2}
+          noiseIntensity={1.8}
+          scale={0.56}
+          rotation={122}
+        />
+      </Box>
+      
+      {/* Content */}
+      <Container maxWidth="sm" sx={{ position: 'relative', zIndex: 1 }}>
+        <Box sx={{ 
+          textAlign: 'center', 
+          my: 4,
+          minHeight: 'calc(100vh - 200px)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+        <Paper
+          elevation={8}
+          sx={{
+            p: 3,
+            mb: 3,
+            background: 'rgba(255, 255, 255, 0.95)',
+            backdropFilter: 'blur(10px)',
+            borderRadius: 3,
+            textAlign: 'center'
+          }}
+        >
+          <Typography 
+            variant="h4" 
+            sx={{
+              background: 'linear-gradient(45deg, #FF69B4, #9C27B0)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              color: 'transparent',
+              fontWeight: 'bold',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.1)'
+            }}
+          >
+            Now Playing
+          </Typography>
+        </Paper>
 
         <Paper
           elevation={3}
@@ -176,8 +222,9 @@ const Music: React.FC = () => {
             </Box>
           </motion.div>
         </Paper>
-      </Box>
-    </Container>
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

@@ -28,8 +28,10 @@ const Navigation: React.FC = () => {
     { text: 'Home', path: '/' },
     { text: 'Games', path: '/games' },
     { text: 'Gallery', path: '/gallery' },
+    { text: 'Where I\'m At', path: '/where-im-at' },
     { text: 'Surprise', path: '/surprise' },
-    { text: 'Music', path: '/music' }
+    { text: 'Music', path: '/music' },
+    { text: 'Beams Demo', path: '/beams-demo' }
   ];
 
   const handleDrawerToggle = () => {

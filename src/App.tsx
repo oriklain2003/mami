@@ -9,11 +9,13 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Games from './pages/Games';
 import Gallery from './pages/Gallery';
+import WhereImAt from './pages/WhereImAt';
 import Surprise from './pages/Surprise';
 import PhotoPuzzle from './games/PhotoPuzzle';
 import LoveQuiz from './games/LoveQuiz';
 import MemoryMatch from './games/MemoryMatch';
 import Music from './pages/Music';
+import BeamsDemo from './pages/BeamsDemo';
 import { Box } from '@mui/material';
 import { AudioProvider } from './context/AudioContext';
 
@@ -47,8 +49,10 @@ const App: React.FC = () => {
                   <Route path="/games/quiz" element={<LoveQuiz />} />
                   <Route path="/games/memory" element={<MemoryMatch />} />
                   <Route path="/gallery" element={<Gallery />} />
+                  <Route path="/where-im-at" element={<WhereImAt />} />
                   <Route path="/surprise" element={<Surprise />} />
                   <Route path="/music" element={<Music />} />
+                  <Route path="/beams-demo" element={<BeamsDemo />} />
                 </Routes>
               </Box>
               <MusicControl />

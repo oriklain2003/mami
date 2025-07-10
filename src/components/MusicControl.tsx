@@ -33,6 +33,7 @@ const MusicControl: React.FC = () => {
         boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
         width: { xs: 'calc(100% - 40px)', sm: 'auto' },
         minWidth: { sm: '300px' },
+        zIndex: 9999, // Ensure it's always on top
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
